@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="testCommesso" project="balicco_invernici_progetto_progettazione_e_algoritmi" tests="7" started="7" failures="0" errors="0" ignored="0">
+  <testsuite name="test.testCommesso" time="0.102" displayname="testCommesso" uniqueid="[engine:junit-jupiter]/[class:test.testCommesso]">
+    <testcase name="testTrovaPrezzo" classname="test.testCommesso" time="0.008" displayname="testTrovaPrezzo()" uniqueid="[engine:junit-jupiter]/[class:test.testCommesso]/[method:testTrovaPrezzo()]"/>
+    <testcase name="testVendita" classname="test.testCommesso" time="0.015" displayname="testVendita()" uniqueid="[engine:junit-jupiter]/[class:test.testCommesso]/[method:testVendita()]"/>
+    <testcase name="testVerificaDisponibilità" classname="test.testCommesso" time="0.013" displayname="testVerificaDisponibilità()" uniqueid="[engine:junit-jupiter]/[class:test.testCommesso]/[method:testVerificaDisponibilità()]"/>
+    <testcase name="testVerificaDisponibilitàPreo" classname="test.testCommesso" time="0.011" displayname="testVerificaDisponibilitàPreo()" uniqueid="[engine:junit-jupiter]/[class:test.testCommesso]/[method:testVerificaDisponibilitàPreo()]"/>
+    <testcase name="testAggiungiPreordine" classname="test.testCommesso" time="0.018" displayname="testAggiungiPreordine()" uniqueid="[engine:junit-jupiter]/[class:test.testCommesso]/[method:testAggiungiPreordine()]"/>
+    <testcase name="testRitiraUsato" classname="test.testCommesso" time="0.013" displayname="testRitiraUsato()" uniqueid="[engine:junit-jupiter]/[class:test.testCommesso]/[method:testRitiraUsato()]"/>
+    <testcase name="testIscrivi" classname="test.testCommesso" time="0.024" displayname="testIscrivi()" uniqueid="[engine:junit-jupiter]/[class:test.testCommesso]/[method:testIscrivi()]"/>
+  </testsuite>
+</testrun>

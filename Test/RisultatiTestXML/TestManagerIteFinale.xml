@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="testManager (1)" project="balicco_invernici_progetto_progettazione_e_algoritmi" tests="5" started="5" failures="0" errors="0" ignored="0">
+  <testsuite name="test.testManager" time="0.059" displayname="testManager" uniqueid="[engine:junit-jupiter]/[class:test.testManager]">
+    <testcase name="testCambiaPrezzo" classname="test.testManager" time="0.01" displayname="testCambiaPrezzo()" uniqueid="[engine:junit-jupiter]/[class:test.testManager]/[method:testCambiaPrezzo()]"/>
+    <testcase name="testAggiungiGiocoPrenotabile" classname="test.testManager" time="0.011" displayname="testAggiungiGiocoPrenotabile()" uniqueid="[engine:junit-jupiter]/[class:test.testManager]/[method:testAggiungiGiocoPrenotabile()]"/>
+    <testcase name="testAggiungiQuantitaGiochi" classname="test.testManager" time="0.009" displayname="testAggiungiQuantitaGiochi()" uniqueid="[engine:junit-jupiter]/[class:test.testManager]/[method:testAggiungiQuantitaGiochi()]"/>
+    <testcase name="testReport" classname="test.testManager" time="0.008" displayname="testReport()" uniqueid="[engine:junit-jupiter]/[class:test.testManager]/[method:testReport()]"/>
+    <testcase name="testAggiungiGioco" classname="test.testManager" time="0.021" displayname="testAggiungiGioco()" uniqueid="[engine:junit-jupiter]/[class:test.testManager]/[method:testAggiungiGioco()]"/>
+  </testsuite>
+</testrun>
