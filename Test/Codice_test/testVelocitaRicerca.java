@@ -29,12 +29,16 @@ public class testVelocitaRicerca {
 		
 	}
 	
+	//Metodo per il riempimento dell'array con numeri interi da 0 alla sua lunghezza - 1
 	private static void riempiArray(int[] vett) {
 		for( int i=0; i<vett.length;i++) {
 			vett[i]=i;
 		}
 	}
-	
+	/* Metodo per il calcolo del tempo impiegato per un numero di iterazioni (passato come parametro)
+	 * dell'algoritmo di ricerca binaria sul vettore passato come parametro ricercando l'intero contenuto in
+	  "valore"
+	*/
 	private static double calcolaTempoBin(int[] vett, int iterazioni, int valore) {
 		double inizioBinary = System.currentTimeMillis();
 		for(int i=0;i<iterazioni;i++)
@@ -43,6 +47,10 @@ public class testVelocitaRicerca {
 		double tempoTotaleBinary = (fineBinary-inizioBinary)*0.001;
 		return tempoTotaleBinary;
 	}
+	/* Metodo per il calcolo del tempo impiegato per un numero di iterazioni (passato come parametro)
+	 * dell'algoritmo di ricerca interpolata sul vettore passato come parametro ricercando l'intero contenuto in
+	  "valore"
+	*/
 	private static double calcolaTempoInterp(int[] vett, int iterazioni, int valore) {
 		double inizioInterp = System.currentTimeMillis();
 		for(int i=0;i<iterazioni;i++)
@@ -52,64 +60,10 @@ public class testVelocitaRicerca {
 		return tempoTotaleInterp;
 	}
 	
+	
 	/*
-	//Metodo che calcola il tempo di esecuzioni della ricerca binaria ripetuta un numero "iterazioni" di volte
-	private  static <T extends Comparable> double  calcolaTempoBin(ArrayList<T> vettore, int iterazioni, T valore) {
-		double inizioBinary = System.currentTimeMillis();
-		for(int i=0;i<iterazioni;i++)
-			TrovaElementoBin(vettore, valore);
-		double fineBinary = System.currentTimeMillis();
-		double tempoTotaleBinary = (fineBinary-inizioBinary)*0.001;
-		return tempoTotaleBinary;
-	}
-	
-	//Metodo che calcola il tempo di esecuzioni della ricerca interpolata ripetuta un numero "iterazioni" di volte
-	private static <T extends Comparable> double calcolaTempoInt(ArrayList<T> vettore, int iterazioni, T valore) {
-		double inizioInterpolata = System.currentTimeMillis();
-		for(int i=0;i<iterazioni;i++)
-			TrovaElementoComp(vettore, valore);
-		double fineInterpolata = System.currentTimeMillis();
-		
-		double tempoTotaleInterpolata = (fineInterpolata-inizioInterpolata)*0.001;
-		return tempoTotaleInterpolata;
-	}
-	
-	
-	
-	
-	
-	// Metodi di ricerca
-	
-	//Ricerca interpolata
-	public static <T extends Comparable> int TrovaElementoComp(ArrayList<T> vett, T elem) {
-		return TrovaElementoCompInt(vett, elem, 0, vett.size()-1);
-	}
-
-
-	private static <T extends Comparable> int TrovaElementoCompInt(ArrayList<T> vett, T elem, int iniz, int fine) {
-		if(iniz>=fine) return -1; //previene la divisione per zero nel calcolo dell'indice
-		int indice= iniz + Math.round((fine-iniz)*((float)elem.compareTo(vett.get(iniz))/
-				(float)vett.get(fine).compareTo(vett.get(iniz))));
-		if(indice<iniz||indice>fine) return -1;
-		else if(vett.get(indice).compareTo(elem)==0) return indice;
-		else if(vett.get(indice).compareTo(elem)<0) return TrovaElementoCompInt(vett, elem, indice+1, fine);
-		else return TrovaElementoCompInt(vett, elem, iniz, indice-1);	
-	}
-	
-	
-	
-	//Ricerca binaria
-	public static <T extends Comparable> int TrovaElementoBin(ArrayList<T> vett, T elem) {
-		return TrovaElementoBinInt(vett, elem, 0, vett.size()-1);
-	}
-	private static <T extends Comparable> int TrovaElementoBinInt(ArrayList<T> vett, T elem, int iniz, int fine) {
-		if(iniz>=fine) return -1; //previene la divisione per zero nel calcolo dell'indice
-		int indice= (fine+iniz)/2;
-		if(indice<iniz||indice>fine) return -1;
-		else if(vett.get(indice).compareTo(elem)==0) return indice;
-		else if(vett.get(indice).compareTo(elem)<0) return TrovaElementoCompInt(vett, elem, indice+1, fine);
-		else return TrovaElementoCompInt(vett, elem, iniz, indice-1);	
-	}*/
+	 * Metodi per la ricerca interpolata in un vettore di interi di interi
+	 */
 	
 	public static int TrovaElementoInterp(int[] vett, int elem) {
 		return TrovaElementoCompInterp(vett, elem, 0, vett.length-1);
@@ -118,8 +72,6 @@ public class testVelocitaRicerca {
 
 	private static int TrovaElementoCompInterp(int[] vett, int elem, int iniz, int fine) {
 		if(iniz>=fine) return -1; //previene la divisione per zero nel calcolo dell'indice
-		//int indice= iniz + Math.round((fine-iniz)*((float)elem.compareTo(vett.get(iniz))/
-		//		(float)vett.get(fine).compareTo(vett.get(iniz))));
 		int indice= iniz + Math.round((fine-iniz)*(float)(elem-vett[iniz])/(float)(vett[fine]-vett[iniz]));
 
 		if(indice<iniz||indice>fine) return -1;
@@ -128,15 +80,19 @@ public class testVelocitaRicerca {
 		else return TrovaElementoCompInterp(vett, elem, iniz, indice-1);	
 	}
 	
+	
+	
+	/*
+	 * Metodi per la ricerca binaria in un vettore di interi
+	 */
+	
 	public static int TrovaElementoBinInt(int[] vett, int elem) {
 		return TrovaElementoBinIntInterno(vett, elem, 0, vett.length-1);
 	}
 
 
 	private static int TrovaElementoBinIntInterno(int[] vett, int elem, int iniz, int fine) {
-		if(iniz>=fine) return -1; //previene la divisione per zero nel calcolo dell'indice
-		//int indice= iniz + Math.round((fine-iniz)*((float)elem.compareTo(vett.get(iniz))/
-		//		(float)vett.get(fine).compareTo(vett.get(iniz))));
+		if(iniz>=fine) return -1; 
 		int indice= (iniz + fine)/2;
 		if(indice<iniz||indice>fine) return -1;
 		else if(vett[indice]==elem) return indice;
